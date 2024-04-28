@@ -11,7 +11,9 @@ export default async function InvoicesTable({
   query: string;
   currentPage: number;
 }) {
+  console.log(`服务器组件table:服务端正在根据query=${query},page=${currentPage} 查询分页数据`)
   const invoices = await fetchFilteredInvoices(query, currentPage);
+  console.log(`服务器组件table:服务端已经根据query=${query},page=${currentPage} 查询到分页数据,正在构造最新table表单UI`)
 
   return (
     <div className="mt-6 flow-root">
